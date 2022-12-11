@@ -25,7 +25,7 @@ Start the development server on http://localhost:3000
 npm run dev
 ```
 
-## Production site
+## Production
 
 Build the application for production:
 
