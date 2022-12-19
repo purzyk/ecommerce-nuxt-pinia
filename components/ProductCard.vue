@@ -1,19 +1,35 @@
 <template>
     <div class="card flex items-center gap-8">
-        <img :src="product.img" :alt="product.title" />
+
         <div>
-            <p class="text-2xl text-secondary">{{ product.title }}</p>
-            <p class="text-xl text-gray-500">{{ product.description }}</p>
-            <p class="text-lg text-secondary my-3">{{ product.price }} Silver coins</p>
-            <button class="btn">
-                <span>Add to basket</span>
+            <NuxtLink :to="`/products/${product.node.id}`">
+                <h3>{{ product.node.title }}</h3>
+                <img :src="product.node.featuredImage.node.sourceUrl" />
+                <p>Price: {{ product.node.price }} zł</p>
+            </NuxtLink>
+            <button @click="addToBasket(product)" :disabled="isPending">
+                <span v-show="!isPending">Add to basket</span>
+                <span v-show="isPending">Adding...</span>
             </button>
         </div>
     </div>
 </template>
 
 <script setup>
+import { useCartStore } from '@/stores/CartStore';
 const { product } = defineProps(['product'])
+const cartStore = useCartStore()
+const isPending = ref(false)
+
+const addToBasket = async () => {
+    isPending.value = true
+    await cartStore.addToCart(product)
+    setTimeout(() => {
+        isPending.value = false
+
+    }, 1000)
+}
+
 </script>
 
 <style scoped>
