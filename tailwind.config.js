@@ -3,15 +3,31 @@ module.exports = {
   content: [],
   theme: {
     extend: {
+      spacing: {
+        'p2': '2%',
+        'p6': '6%',
+        'p8': '8%',
+      },
       colors: {
-        primary: '#270A4B',
-        secondary: '#E8C36D',
-        dark: '#110734'
+        primary: '#8394a7',
+        secondary: {
+          100: '#E2E2D5',
+          200: '#888883',
+          300: '#f5f5f5',
+          400: '#ddd',
+        }
       },
       fontFamily: {
-        sans: ['VT323']
-      }
+        Roboto: [
+          'Roboto Slab'
+        ]
+      },
+    },
+    container: {
+      maxWidth: '100%',
+      padding: "8%",
+      center: true,
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/forms')]
 }

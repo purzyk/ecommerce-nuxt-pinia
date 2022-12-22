@@ -19,9 +19,9 @@ export const useCartStore = defineStore('cart', {
             })
         },
         async addToCart(product) {
-            const exist = this.cart.find(p => p.id === product.node.id)
+            const exist = this.cart.find(p => p.id === product.id)
             if (!exist) {
-                this.cart.push({ ...product.node })
+                this.cart.push({ ...product })
             }
 
         }
