@@ -1,5 +1,7 @@
 <template>
     <div class="pb-12">
+        <!--Product details-->
+
         <div class="block overflow-hidden group">
             <NuxtLink :to="{ name: 'products-id', params: { id: product.id } }">
                 <img :src="product.thumbnail" alt="" loading="lazy"
@@ -15,6 +17,8 @@
                 </div>
             </NuxtLink>
         </div>
+        <!--Add to card button-->
+
         <button @click="addProductToCart(product)" :disabled="isPending"
             class="group relative inline-block overflow-hidden border border-primary px-8 py-3 focus:outline-none focus:ring">
             <div

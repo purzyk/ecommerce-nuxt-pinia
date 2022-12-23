@@ -1,7 +1,13 @@
 <template>
     <section>
         <div class="max-w-screen-xl px-4 py-8 mx-auto sm:px-6 sm:py-12 lg:px-8">
+            <!--Title-->
+
             <TheTitle :data="this.title" />
+
+            <!--Filters-->
+
+
             <div class="mt-8 sm:flex sm:items-center sm:justify-between">
                 <div class="sm:flex sm:gap-12">
                     <div class="relative">
@@ -44,6 +50,9 @@
                 </div>
 
             </div>
+
+            <!--Products counter-->
+
             <div class="mt-8 sm:flex sm:items-center sm:justify-between">
                 <div class="block text-sm font-medium text-gray-700 ">
                     <p v-if="filterProducts.length > 0"><span class="material-symbols-outlined">
@@ -58,6 +67,7 @@
                 </div>
             </div>
 
+            <!--Products list-->
 
             <ul class="grid gap-4 mt-4 sm:grid-cols-2 lg:grid-cols-4" v-if="productsList">
                 <li v-for="product in filterProducts" :key="product.id">
@@ -157,6 +167,6 @@ export default {
     },
 }
 </script>
-<style src="@vueform/slider/themes/default.css">
+<style  src="@vueform/slider/themes/default.css">
 
 </style>

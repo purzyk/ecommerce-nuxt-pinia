@@ -1,9 +1,9 @@
 <template>
-
     <section>
         <div class="max-w-screen-xl px-4 py-8 mx-auto sm:px-6 sm:py-12 lg:px-8">
             <TheTitle :data="data.title" />
             <ul class="grid grid-cols-1 gap-4 mt-8 lg:grid-cols-3">
+                <!--Item-->
                 <li>
                     <NuxtLink to="/products">
                         <div class="relative block group">
@@ -22,7 +22,7 @@
                         </div>
                     </NuxtLink>
                 </li>
-
+                <!--Item-->
                 <li>
                     <NuxtLink to="/products">
                         <div class="relative block group">
@@ -41,7 +41,7 @@
                         </div>
                     </NuxtLink>
                 </li>
-
+                <!--Item-->
                 <li class="lg:col-span-2 lg:col-start-2 lg:row-span-2 lg:row-start-1">
                     <NuxtLink to="/products">
                         <div class="relative block group">
@@ -63,7 +63,6 @@
             </ul>
         </div>
     </section>
-
 </template>
 
 <script setup>

@@ -14,3 +14,30 @@
     @apply text-white py-4 lg:py-0 lg:px-[3%] xl:px-8;
   }
 }
+
+.input {
+  @apply w-full mt-1 border-gray-200 rounded-md shadow-sm sm:text-sm;
+}
+
+.invalid-feedback {
+  @apply text-red-500 sm:text-xs mb-4;
+}
+.label {
+  @apply block text-xs font-medium text-gray-700;
+}
+
+.cardDetails {
+  @apply relative w-full border-gray-200  focus:z-10 sm:text-sm;
+}
+
+.termsTitle {
+  @apply font-bold sm:text-2xl text-gray-900 text-xl;
+}
+
+.termsCopy {
+  @apply md:text-base md:leading-loose text-gray-700 dark:text-gray-300 w-11/12;
+}
+
+.termsList {
+  @apply h-2 w-2 rounded-full bg-gray-500 absolute left-0 mt-3;
+}

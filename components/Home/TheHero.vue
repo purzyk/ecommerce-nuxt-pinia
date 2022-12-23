@@ -3,7 +3,9 @@
         class="overflow-hidden bg-[url(https://images.unsplash.com/photo-1602810319428-019690571b5b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80)] bg-cover bg-center bg-no-repeat">
         <div class="bg-black/25 p-8 md:p-12 lg:px-16 lg:py-24">
             <div class="max-w-lg text-center sm:text-left">
+                <!--Title-->
                 <TheTitle :data="data.title" />
+                <!--Button-->
                 <div class="mt-4 sm:mt-8">
                     <NuxtLink to="/products">
                         <p
@@ -20,7 +22,6 @@
             </div>
         </div>
     </section>
-
 </template>
 
 <script setup>

@@ -1,14 +1,18 @@
 <template>
   <header aria-label="Site Header" class="border-b border-gray-100">
     <div class="font-sans antialiased" id="app">
-      {{ data.arr }}
       <nav class="flex items-center justify-between flex-wrap bg-teal p-6 mainNav">
         <div class="flex items-center flex-no-shrink mr-6">
+          <!--Header logo-->
+
           <NuxtLink to="/">
             <SVGLogo />
           </NuxtLink>
 
         </div>
+
+        <!--Hamburger button-->
+
         <div class="block sm:hidden">
           <button @click="toggle"
             class="flex items-center px-3 py-2 border rounded text-teal-lighter border-teal-light">
@@ -17,16 +21,23 @@
             </svg>
           </button>
         </div>
+
+        <!--Main nav-->
+
         <div :class="open ? 'block' : 'hidden'" class="w-full flex-grow sm:flex sm:items-center sm:w-auto">
           <div class="text-sm sm:flex-grow">
             <div v-for="link in data.links" :key="link"
               class="no-underline block mt-4 sm:inline-block sm:mt-0 text-teal-lighter  mr-4  hover:text-primary hover:font-bold">
-              <NuxtLink :to="link.link">
+              <NuxtLink :to="link.link" @click="open = false">
                 {{ link.name }}
               </NuxtLink>
             </div>
 
           </div>
+
+          <!--Cart icon-->
+
+
           <div>
             <span>
               <NuxtLink to="/cart">
