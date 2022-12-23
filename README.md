@@ -1,9 +1,11 @@
-# Nuxt 3 Minimal Starter
+# Nuxt 3, Tailwind, Pinia e-commerce website.
 
 https://ecommerce-nuxt-pinia.netlify.app/
+
 Ecoomerce website buld with Vue Nuxt.js, tailwind, pinia and free dummy json
 
-###Based functionalities:
+### Based functionalities:
+
 products can be filtered by category and/or price
 products can be added and removed from cart
 you can update products quantity
