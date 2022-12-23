@@ -41,7 +41,7 @@
                     <div class="invalid-feedback">{{ errors.cardNumber }}</div>
 
                 </div>
-                <div class="flex ">
+                <div class="flex flex-col md:flex-row">
                     <div class="flex-1">
                         <label for="CardExpiry" class="sr-only"> Card Expiry </label>
                         <Field name="cardExpiry" type="text" id="CardExpiry" placeholder="Expiry Date"

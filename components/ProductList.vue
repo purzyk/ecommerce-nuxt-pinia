@@ -11,7 +11,7 @@
             <div class="mt-8 sm:flex sm:items-center sm:justify-between">
                 <div class="sm:flex sm:gap-12">
                     <div class="relative">
-                        <fieldset class="col-span-6">
+                        <fieldset class="col-span-6 pb-10 md:pb-0">
                             <legend class="block text-sm font-medium text-gray-700 pb-4">
                                 <span class="material-symbols-outlined">
                                     filter_alt
@@ -32,8 +32,8 @@
                         </fieldset>
                     </div>
                     <div class="relative">
-                        <fieldset class="col-span-6 flex flex-col justify-between w-40 h-full">
-                            <legend class="block text-sm font-medium text-gray-700 ">
+                        <fieldset class="col-span-6 flex flex-col justify-between md:w-40 h-full">
+                            <legend class="block text-sm font-medium text-gray-700 mb-12 md:mb-0">
                                 <span class="material-symbols-outlined">
                                     sell
                                 </span>Select price range
