@@ -5,13 +5,6 @@ export default defineNuxtConfig({
         '@nuxtjs/tailwindcss',
         '@pinia/nuxt'
     ],
-    apollo: {
-        clients: {
-            default: {
-                httpEndpoint: 'https://przyjazna.com.pl/graphql/',
-            },
-        },
-    },
     app: {
         head: {
             link: [

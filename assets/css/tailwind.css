@@ -6,7 +6,9 @@
 * {
   font-family: "Roboto Slab", serif;
 }
-
+.material-symbols-outlined {
+  font-family: "Material Icons Outlined";
+}
 @layer components {
   .nav-link {
     @apply text-white py-4 lg:py-0 lg:px-[3%] xl:px-8;

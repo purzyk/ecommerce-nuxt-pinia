@@ -1,13 +1,13 @@
 <template>
   <div class="m-8">
-    <Header />
+    <TheHeader />
     <div class="wrapper" v-if="productStore.numberOfProducts > 0">
       <slot />
     </div>
     <div v-else>
-      loading
+      Loading products
     </div>
-    <Footer />
+    <TheFooter />
   </div>
 </template>
 <script setup>

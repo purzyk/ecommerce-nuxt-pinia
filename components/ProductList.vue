@@ -1,35 +1,19 @@
 <template>
-
     <section>
         <div class="max-w-screen-xl px-4 py-8 mx-auto sm:px-6 sm:py-12 lg:px-8">
-            <header>
-                <h2 class="text-xl font-bold text-gray-900 sm:text-3xl">
-                    Product Collection
-                </h2>
-
-                <p class="max-w-md mt-4 text-gray-500">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque
-                    praesentium cumque iure dicta incidunt est ipsam, officia dolor fugit
-                    natus?
-                </p>
-            </header>
-
+            <TheTitle :data="this.title" />
             <div class="mt-8 sm:flex sm:items-center sm:justify-between">
-
-
                 <div class="sm:flex sm:gap-12">
                     <div class="relative">
-
                         <fieldset class="col-span-6">
                             <legend class="block text-sm font-medium text-gray-700 pb-4">
-                                Filter by category
+                                <span class="material-symbols-outlined">
+                                    filter_alt
+                                </span> Filter by category
                             </legend>
-
                             <div class="mt-1 -space-y-px bg-white rounded-md shadow-sm">
                                 <div>
-                                    <label for="Country" class="sr-only">Category</label>
-
-                                    <select id="Country" v-model="category"
+                                    <select id="Filter" v-model="category"
                                         class="relative w-full border-gray-200 rounded-t-md focus:z-10 sm:text-sm">
                                         <option value="all">all</option>
                                         <option :value="category" v-for="category in this.categoriesList"
@@ -42,13 +26,14 @@
                         </fieldset>
                     </div>
                     <div class="relative">
-
                         <fieldset class="col-span-6 flex flex-col justify-between w-40 h-full">
                             <legend class="block text-sm font-medium text-gray-700 ">
-                                Select price range
+                                <span class="material-symbols-outlined">
+                                    sell
+                                </span>Select price range
                             </legend>
 
-                            <div class="mt-1 -space-y-px bg-white rounded-md shadow-sm mt-auto">
+                            <div class="-space-y-px bg-white rounded-md shadow-sm mt-auto">
                                 <div v-if="this.initialSliderValues.length > 0">
                                     <Slider v-model="productsMinMaxPrice" :min="this.initialSliderValues[0]"
                                         :max="this.initialSliderValues[1]" />
@@ -61,16 +46,20 @@
             </div>
             <div class="mt-8 sm:flex sm:items-center sm:justify-between">
                 <div class="block text-sm font-medium text-gray-700 ">
-                    <p v-if="filterProducts.length > 0">
+                    <p v-if="filterProducts.length > 0"><span class="material-symbols-outlined">
+                            visibility
+                        </span>
                         Showing {{ filterProducts.length }} <span v-if="filterProducts.length > 1">products</span><span
                             v-else>product</span>
                     </p>
-                    <p v-else>No products match your filters</p>
+                    <p v-else><span class="material-symbols-outlined">
+                            visibility_off
+                        </span>No products match your filters</p>
                 </div>
             </div>
 
 
-            <ul class="grid gap-4 mt-4 sm:grid-cols-2 lg:grid-cols-3" v-if="productsList">
+            <ul class="grid gap-4 mt-4 sm:grid-cols-2 lg:grid-cols-4" v-if="productsList">
                 <li v-for="product in filterProducts" :key="product.id">
                     <ProductCard :product="product" />
                 </li>
@@ -98,6 +87,11 @@ export default {
             productsFiltered: [],
             categoriesList: [],
             categoriesUrl: "https://dummyjson.com/products/categories",
+            title: {
+                title: 'Product Collection',
+                copy: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque praesentium cumque iure dicta incidunt est ipsam, officia dolor fugit natus?",
+                left: true,
+            }
         };
     },
 
@@ -114,9 +108,6 @@ export default {
         }
     },
     methods: {
-        changeNumbers() {
-            this.test = '111'
-        },
         loadCategories() {
             fetch(this.categoriesUrl)
                 .then(res => res.json())

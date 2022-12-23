@@ -12,62 +12,29 @@
 
 			<nav aria-label="Footer Nav" class="mt-12">
 				<ul class="flex flex-wrap justify-center gap-6 md:gap-8 lg:gap-12">
-					<li>
-						<p class="text-gray-700 transition hover:text-gray-700/75">
-							About
-						</p>
-					</li>
 
-					<li>
+					<li v-for="link in data.links" :key="link">
 						<p class="text-gray-700 transition hover:text-gray-700/75">
-							Careers
-						</p>
-					</li>
-
-					<li>
-						<p class="text-gray-700 transition hover:text-gray-700/75">
-							History
-						</p>
-					</li>
-
-					<li>
-						<p class="text-gray-700 transition hover:text-gray-700/75">
-							Services
-						</p>
-					</li>
-
-					<li>
-						<p class="text-gray-700 transition hover:text-gray-700/75">
-							Projects
-						</p>
-					</li>
-
-					<li>
-						<p class="text-gray-700 transition hover:text-gray-700/75">
-							Blog
+							<NuxtLink :to="link.link">
+								{{ link.name }}
+							</NuxtLink>
 						</p>
 					</li>
 				</ul>
 			</nav>
-
 			<ul class="mt-12 flex justify-center gap-6 md:gap-8">
 				<li>
 					<p rel="noreferrer" target="_blank" class="text-gray-700 transition hover:text-gray-700/75">
-						<span class="sr-only">Facebook</span>
 						<SVGFb />
 					</p>
 				</li>
-
 				<li>
 					<p rel="noreferrer" target="_blank" class="text-gray-700 transition hover:text-gray-700/75">
-						<span class="sr-only">Instagram</span>
 						<SVGInsta />
 					</p>
 				</li>
-
 				<li>
 					<p rel="noreferrer" target="_blank" class="text-gray-700 transition hover:text-gray-700/75">
-						<span class="sr-only">Twitter</span>
 						<SVGTwitter />
 					</p>
 				</li>
@@ -81,8 +48,18 @@
 
 
 <script setup>
+import { ref } from 'vue';
+const data = ref({
+	links: [
+		{ name: 'About', link: '/' },
+		{ name: 'Careers', link: '/' },
+		{ name: 'History', link: '/' },
+		{ name: 'Services', link: '/' },
+		{ name: 'Projects', link: '/' },
+		{ name: 'Blog', link: '/' },
+	],
 
-
+})
 </script>
 
 <style>

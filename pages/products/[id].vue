@@ -46,12 +46,12 @@
 
             <form class="mt-8">
               <div class="flex mt-8">
-                <button @click="addToBasket(product)" :disabled="isPending"
-                  class="group relative inline-block overflow-hidden border border-indigo-600 px-8 py-3 focus:outline-none focus:ring">
+                <button @click="addProductToCart(prod)" :disabled="isPending"
+                  class="group relative inline-block overflow-hidden border border-primary px-8 py-3 focus:outline-none focus:ring">
                   <div
-                    class="absolute inset-y-0 left-0 w-[2px] bg-indigo-600 transition-all group-hover:w-full group-active:bg-indigo-500">
+                    class="absolute inset-y-0 left-0 w-[2px] bg-primary transition-all group-hover:w-full group-active:bg-primary">
                   </div>
-                  <div class="relative text-sm font-medium text-indigo-600 transition-colors group-hover:text-white">
+                  <div class="relative text-sm font-medium text-primary transition-colors group-hover:text-white">
                     <span v-show="!isPending">Add to card</span>
                     <span v-show="isPending">Adding...</span>
                   </div>
@@ -70,16 +70,17 @@
 
 <script setup>
 import { useCartStore } from '@/stores/CartStore';
+import { useProductStore } from '@/stores/ProductStore';
 const { id } = useRoute().params
-const { product } = defineProps(['product'])
 const cartStore = useCartStore()
 const isPending = ref(false)
+const productStore = useProductStore()
 const uri = 'https://dummyjson.com/products/' + id
 const { data: productDetail } = await useFetch(uri, { key: id })
-
-const addToBasket = async () => {
+const prod = productStore.products.filter(character => character.id === parseInt(id))[0];
+const addProductToCart = async () => {
   isPending.value = true
-  await cartStore.addToCart(product)
+  await cartStore.addToCart(prod)
   setTimeout(() => {
     isPending.value = false
 
