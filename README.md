@@ -1,6 +1,13 @@
 # Nuxt 3 Minimal Starter
 
-https://przyjazna-store.netlify.app/
+https://ecommerce-nuxt-pinia.netlify.app/
+Ecoomerce website buld with Vue Nuxt.js, tailwind, pinia and free dummy json
+
+###Based functionalities:
+products can be filtered by category and/or price
+products can be added and removed from cart
+you can update products quantity
+form in checkout page is validating throu vee-validate
 
 ## Setup
 
