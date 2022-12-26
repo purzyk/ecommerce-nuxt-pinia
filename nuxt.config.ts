@@ -8,6 +8,7 @@ export default defineNuxtConfig({
     app: {
         head: {
             link: [
+                { rel: 'icon', type: 'image/png', href: '/favicon.png' },
                 {
                     rel: 'stylesheet',
                     href: 'https://fonts.googleapis.com/icon?family=Material+Icons+Outlined'

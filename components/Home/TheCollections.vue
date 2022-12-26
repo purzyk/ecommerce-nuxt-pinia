@@ -72,7 +72,5 @@ const data = ref({
         title: 'New Collection',
         copy: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque praesentium cumque iure dicta incidunt est ipsam, officia dolor fugit natus?"
     }
-
-
 })
 </script>
